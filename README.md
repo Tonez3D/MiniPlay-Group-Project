@@ -1,1 +1,4 @@
-# CS321-Group-Project
+# MiniPlay
+## Intro
+
+## Games
