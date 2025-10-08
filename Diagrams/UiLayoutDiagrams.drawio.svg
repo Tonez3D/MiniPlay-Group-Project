@@ -1,0 +1,109 @@
+<svg host="65bd71144e" xmlns="http://www.w3.org/2000/svg" style="background: transparent; background-color: transparent;" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="842px" height="503px" viewBox="-0.5 -0.5 842 503" content="&lt;mxfile&gt;&lt;diagram id=&quot;-sZBvHngBPi0DZvvkFA7&quot; name=&quot;Main Screen&quot;&gt;3ZbPb4MgFID/lh08LlHRrruu69ZLkyU26ZnIm5CgGKRT99cPFX+FNumhm80uCh/vIXw+jA7apNW7xDndCwLc8V1SOejV8X3fC5C+NaTuSBiGHUgkIx3yRhCxbzDQNfTECBSzQCUEVyyfw1hkGcRqxrCUopyHfQo+f2qOE7BAFGNu0yMjinZ0Hboj3wFLaP9kzzUjKe6DDSgoJqKcILR10EYKobpWWm2AN/J6L13e24XRYWESMnVNgt8lfGF+Mnsz61J1v1kpThmBJt510EtJmYIox3EzWurXqxlVKdc9TzfNdCAVVBeX5A0b1RUCIgUlax1iEh4HW6Y6kOmWE9WBYXSiOezzsHm9yTD3aEA3jITzQtA/ErK6gY/A8nEEHou0PXL6smcZ++C4frg/Tc9XagqCG3gKLU8HFmtwwO1VwP35OVNGq1+qopVlR3/jiqIUkizvJVhMy5N9uFojbgRYxnRxNf5iZtaWmR3wfHEh678SorvjT0A7NvmVQtsf&lt;/diagram&gt;&lt;diagram id=&quot;RTpMHDd_ds1_XWM2VQpG&quot; name=&quot;Tic Tac Toe&quot;&gt;5VtRd6I4FP41nn3SQwgh8lht7ezD7JmddnZ2n/ZkIBXOIGFCrHZ//SYCKiRWeipClZ5T4SYk4ftuwr1fdACni/U9J2n4mQU0HthWsB7A24FtYwiQ/FCWl9xiY1xY5jwKchvYGR6i/2hhtArrMgpoVqkoGItFlFaNPksS6ouKjXDOVtVqTyyu9pqSOdUMDz6Jdev3KBBhbh0ja2f/RKN5WPYMrKJkQcrKhSELScBWeyZ4N4BTzpjIzxbrKY0VeiUu+X2zA6XbgXGaiCY3/Amf7v7+8fjtmxzur5iG0XDxeQjzVp5JvCweuBiseCkR4GyZBFQ1Yg3gZBVGgj6kxFelK0m6tIViEcsrIE+L5igXdH1wnGD79NJvKFtQwV9kleKG4RbCwmdgcbnaw98pbOEe9qi8jxScz7dt72CRJwUyb0AJXBBKblsg2R8AJK8hSI5zApTos++trH+j+z+yNPjr2YP4/neDKz1GvjQ8ks1/RvsHmsGz3JYcywiZ7lhy1cyyFeNB92A5/cJKX8+/b2CyHijhftg5Xna/4HI0uD7ROO0cpXG/UPKOr+yyFRmR0ePokCzNw7SnaK0QnTxFcTxlMePSlrBENZEJzn5uwy24tZTVBjZ07NnsxrrQBa/s/2Sv0oMY7yE6uVV/skRG0oJECeWn82dQm/YA6Ag7luk9/FpIV3T3VfoTSeYSmG1/To1QZHjvI2N31d5ILChPiKAThXamEbt90ndw3SC2pElwo1KZHXvackMDLY3ZkfOKk+mUHYGotHEaExE9Vzt9haUvLJLD2c05OMJjD7nARhiOsW0BOgSw6iQQjuD+4VQ7ydiS+7Rodz/vqXUFPW/k7R3um3oRhM+p0Ho5Gf0NouYLpL+Guu05FVK0ad+U60PtnovNBun0BbJpu+7I3TvgachUzdp7zdrovGTqweE1kNlgZa7zjdtYmI900jb5+Dj5WUhSdeqrbPR4EMaZkLywRF4OHVSLymQAdgMxwI0Drjd5TtlMLQor5tOeX20Ds7CqaR52ovcFusiAshsLBQ7buMoObvfXkpUFw2yjE9/ICjZK1xvMynJ5Nlef/0gvlOWPS56Ubcox5s3mNTRCdzE1OI94UMvzgKOHqcCUeeDWCBk3d/ssUkF3sfxNgojLODx3b7kAqOGfQ07waoE+0hE0AQhOIRWbEWyQLHeu6LlYh6k9Sd2svJw6x+0Up/YEqo+w9YCb7j20J6s7eh7Ve13d5F3nVT/1dKW/ynr3aOn5QK+19e4B06O7Pqrr3ePkHl/jL0pf7x7xBtndxxLYa4slNsTBVyqwOw1SmlZknNzJeizjXIXA7jTZvLw8+i9UYC/RuTI2L1NgR11tffZ+Zb4CgR3pCbtG/okF9tnMkse7BPZDntNXgR21mlroeUSTONiy2qbBxniEqkw49shEBjKRgdoiw7Tb0RIZwG6alaBbPJu1ysa4xoUhNwGm3KQ9kR41yP8ucFp4dn1aIGyYFmPDrBi3NilMX5k40RbglC3SpUwwf5OJ5exLTF5kyi2rq8t+7wvWdrXwWJ8xtulF0tq+IPrg+4IAGASK824MIj0R/UpTSkSmISmfW9TWmDiaKwR9+fxKN5oodCKfxDdFwSIKgvjQYlWVspSrF7+zUhCeBG5cgxsavuBpXOPR2+GWl7sfTeXh6O63Z/Dufw==&lt;/diagram&gt;&lt;diagram id=&quot;e7HnpNSEB9Lz2zrEpAn6&quot; name=&quot;Page-3&quot;&gt;3ZZBT4MwFIB/DUeTjsIcRzc3NVEPsmTZsYG30Vh4pHQC+/WWUdgILupBh16g/fr6KB+leRadxcWdZGn0hCEIyyZhYdFby7YpIa6+VaSsiWcbsJU8rNHoCHy+BwOJoTseQtYJVIhC8bQLA0wSCFSHMSkx74ZtUHSfmrIt9IAfMNGnKx6qqKYTlxz5PfBt1Dx5RMxIzJpgA7KIhZifIDq36EwiqroVFzMQlbzGSz1vcWa0XZiERH1lAni+/5zt3f365fEhX5dz7+3mymR5Y2JnXtgsVpWNAYm7JIQqCbHoNI+4Aj9lQTWa62+uWaRioXsj3TTpQCoozq5z1L693jaAMShZ6hAz4apVWDabqO7mJ/4dw6IT924zj5lvvm1zH7XohjHzDUv2P7I0/ilJ9A9I8r4oyXF+ypLTs7TkgQZLdrgiDE/aBztr/Jsby+0p06dmluUow8vLcoblatxztTpoIj4wGUQX92UPS9d1T9c9iPTilibDsjT5/GTXWXRFBp/bYVlal2kbXlRGpxsuxAwFSs0STKoUmZL42pZbtCVNmGVTx14sbshf+4d191jvHcZOqmY6fwc=&lt;/diagram&gt;&lt;/mxfile&gt;">
+    <defs/>
+    <g>
+        <g>
+            <rect x="0" y="1" width="840" height="500" fill="#ffffff" stroke="#000000" pointer-events="all" style="fill: light-dark(#ffffff, var(--ge-dark-color, #121212)); stroke: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));"/>
+        </g>
+        <g>
+            <rect x="0" y="1" width="840" height="60" fill="#ffffff" stroke="#000000" pointer-events="all" style="fill: light-dark(#ffffff, var(--ge-dark-color, #121212)); stroke: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));"/>
+        </g>
+        <g>
+            <rect x="0" y="61" width="840" height="440" fill="#ffffff" stroke="#000000" pointer-events="all" style="fill: light-dark(#ffffff, var(--ge-dark-color, #121212)); stroke: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));"/>
+        </g>
+        <g>
+            <rect x="0" y="1" width="60" height="60" fill="#ffffff" stroke="#000000" pointer-events="all" style="fill: light-dark(#ffffff, var(--ge-dark-color, #121212)); stroke: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));"/>
+        </g>
+        <g>
+            <g transform="translate(-0.5 -0.5)">
+                <switch>
+                    <foreignObject style="overflow: visible; text-align: left;" pointer-events="none" width="100%" height="100%" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility">
+                        <div xmlns="http://www.w3.org/1999/xhtml" style="display: flex; align-items: unsafe center; justify-content: unsafe center; width: 58px; height: 1px; padding-top: 31px; margin-left: 1px;">
+                            <div style="box-sizing: border-box; font-size: 0; text-align: center; color: #000000; ">
+                                <div style="display: inline-block; font-size: 12px; font-family: &quot;Helvetica&quot;; color: light-dark(#000000, #ffffff); line-height: 1.2; pointer-events: all; white-space: normal; word-wrap: normal; ">
+                                    Tic Tac Toe
+                                </div>
+                            </div>
+                        </div>
+                    </foreignObject>
+                    <text x="30" y="35" fill="light-dark(#000000, #ffffff)" font-family="&quot;Helvetica&quot;" font-size="12px" text-anchor="middle">
+                        Tic Tac Toe
+                    </text>
+                </switch>
+            </g>
+        </g>
+        <g>
+            <rect x="60" y="1" width="60" height="60" fill="#ffffff" stroke="#000000" pointer-events="all" style="fill: light-dark(#ffffff, var(--ge-dark-color, #121212)); stroke: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));"/>
+        </g>
+        <g>
+            <g transform="translate(-0.5 -0.5)">
+                <switch>
+                    <foreignObject style="overflow: visible; text-align: left;" pointer-events="none" width="100%" height="100%" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility">
+                        <div xmlns="http://www.w3.org/1999/xhtml" style="display: flex; align-items: unsafe center; justify-content: unsafe center; width: 58px; height: 1px; padding-top: 31px; margin-left: 61px;">
+                            <div style="box-sizing: border-box; font-size: 0; text-align: center; color: #000000; ">
+                                <div style="display: inline-block; font-size: 12px; font-family: &quot;Helvetica&quot;; color: light-dark(#000000, #ffffff); line-height: 1.2; pointer-events: all; white-space: normal; word-wrap: normal; ">
+                                    Crossword
+                                </div>
+                            </div>
+                        </div>
+                    </foreignObject>
+                    <text x="90" y="35" fill="light-dark(#000000, #ffffff)" font-family="&quot;Helvetica&quot;" font-size="12px" text-anchor="middle">
+                        Crossword
+                    </text>
+                </switch>
+            </g>
+        </g>
+        <g>
+            <rect x="120" y="1" width="60" height="60" fill="#ffffff" stroke="#000000" pointer-events="all" style="fill: light-dark(#ffffff, var(--ge-dark-color, #121212)); stroke: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));"/>
+        </g>
+        <g>
+            <g transform="translate(-0.5 -0.5)">
+                <switch>
+                    <foreignObject style="overflow: visible; text-align: left;" pointer-events="none" width="100%" height="100%" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility">
+                        <div xmlns="http://www.w3.org/1999/xhtml" style="display: flex; align-items: unsafe center; justify-content: unsafe center; width: 58px; height: 1px; padding-top: 31px; margin-left: 121px;">
+                            <div style="box-sizing: border-box; font-size: 0; text-align: center; color: #000000; ">
+                                <div style="display: inline-block; font-size: 12px; font-family: &quot;Helvetica&quot;; color: light-dark(#000000, #ffffff); line-height: 1.2; pointer-events: all; white-space: normal; word-wrap: normal; ">
+                                    Word Search
+                                </div>
+                            </div>
+                        </div>
+                    </foreignObject>
+                    <text x="150" y="35" fill="light-dark(#000000, #ffffff)" font-family="&quot;Helvetica&quot;" font-size="12px" text-anchor="middle">
+                        Word Search
+                    </text>
+                </switch>
+            </g>
+        </g>
+        <g>
+            <rect x="180" y="1" width="60" height="60" fill="#ffffff" stroke="#000000" pointer-events="all" style="fill: light-dark(#ffffff, var(--ge-dark-color, #121212)); stroke: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));"/>
+        </g>
+        <g>
+            <g transform="translate(-0.5 -0.5)">
+                <switch>
+                    <foreignObject style="overflow: visible; text-align: left;" pointer-events="none" width="100%" height="100%" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility">
+                        <div xmlns="http://www.w3.org/1999/xhtml" style="display: flex; align-items: unsafe center; justify-content: unsafe center; width: 58px; height: 1px; padding-top: 31px; margin-left: 181px;">
+                            <div style="box-sizing: border-box; font-size: 0; text-align: center; color: #000000; ">
+                                <div style="display: inline-block; font-size: 12px; font-family: &quot;Helvetica&quot;; color: light-dark(#000000, #ffffff); line-height: 1.2; pointer-events: all; white-space: normal; word-wrap: normal; ">
+                                    Help
+                                </div>
+                            </div>
+                        </div>
+                    </foreignObject>
+                    <text x="210" y="35" fill="light-dark(#000000, #ffffff)" font-family="&quot;Helvetica&quot;" font-size="12px" text-anchor="middle">
+                        Help
+                    </text>
+                </switch>
+            </g>
+        </g>
+        <g>
+            <ellipse cx="90" cy="31" rx="30" ry="30" fill="none" stroke="#42ffa0" stroke-width="3" pointer-events="all" style="stroke: light-dark(rgb(66, 255, 160), rgb(0, 99, 17));"/>
+        </g>
+    </g>
+    <switch>
+        <g requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility"/>
+        <a transform="translate(0,-5)" xlink:href="https://www.drawio.com/doc/faq/svg-export-text-problems" target="_blank">
+            <text text-anchor="middle" font-size="10px" x="50%" y="100%">
+                Text is not SVG - cannot display
+            </text>
+        </a>
+    </switch>
+</svg>
