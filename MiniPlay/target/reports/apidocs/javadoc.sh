@@ -1,0 +1,1 @@
+/usr/lib/apache-netbeans/jdk/bin/javadoc -J-Duser.language= -J-Duser.country= @options @packages

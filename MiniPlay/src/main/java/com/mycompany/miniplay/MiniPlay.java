@@ -4,6 +4,8 @@
 
 package com.mycompany.miniplay;
 
+import MiniPlay.GUI.MainMenu;
+import javax.swing.*;
 /**
  *
  * @author cassi
@@ -11,6 +13,14 @@ package com.mycompany.miniplay;
 public class MiniPlay {
 
     public static void main(String[] args) {
-        System.out.println("Hello World!");
-    }
+        
+        MainMenu maink = new MainMenu();
+        SwingUtilities.invokeLater(new Runnable() {
+    public void run() {
+            maink.display();
+        }
+          });
+    
+}
+
 }

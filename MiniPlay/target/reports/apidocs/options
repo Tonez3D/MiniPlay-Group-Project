@@ -5,14 +5,14 @@
 --release
 24
 -sourcepath
-'C:/Users/cassi/OneDrive/Cassidy\'s_Folder/UAH/Classes/CS321/MiniPlay/src/main/java'
+'/home/Ifeatu/Dev/MiniPlay-Group-Project/MiniPlay/src/main/java'
 -author
 -bottom
 'Copyright &#169; 2025. All rights reserved.'
 -charset
 'UTF-8'
 -d
-'C:/Users/cassi/OneDrive/Cassidy\'s_Folder/UAH/Classes/CS321/MiniPlay/target/reports/apidocs'
+'/home/Ifeatu/Dev/MiniPlay-Group-Project/MiniPlay/target/reports/apidocs'
 -docencoding
 'UTF-8'
 -doctitle

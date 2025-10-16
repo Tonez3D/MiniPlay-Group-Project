@@ -19,6 +19,13 @@ public class MainMenu {
      */
     public MainMenu() {
         // Initialize JFrame and add buttons
+        frame = new JFrame("Mini Play");
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        
+        JLabel label = new JLabel("Welcome to Mini Play!");
+        frame.getContentPane().add(label);
+        
+        frame.pack();
     }
 
     /**
@@ -27,6 +34,12 @@ public class MainMenu {
     public void display() {
         // Show the main menu
         frame.setVisible(true);
+    }
+    /**
+     * Hide the main menu
+     */
+    public void hide() {
+        frame.setVisible(false);
     }
     
 }
