@@ -25,6 +25,7 @@ public class GameManager {
         mainMenu = new MainMenu(this);
         TttGUI = new tttGUI(this);
         crosswordGUI = new CrosswordGUI(this);
+        wordSearchGUI = new WordSearchGUI(this);
     }
     
     /**
@@ -59,9 +60,9 @@ public class GameManager {
     
     public void returnToMain() {
         //Hides all game GUIS and displays main menu
-        TttGUI.hide();
-        crosswordGUI.hide();
-        wordSearchGUI.hide();
+        if (TttGUI != null) TttGUI.hide();
+        if (crosswordGUI != null) crosswordGUI.hide();
+        if (wordSearchGUI != null) wordSearchGUI.hide();
         mainMenu.display();
         
     }
