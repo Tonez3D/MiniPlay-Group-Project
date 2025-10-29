@@ -16,7 +16,7 @@ public class WordSearchGUI {
      
     /**
      * Creates Word Search GUI
-     * @param manager
+     * @param manager the GameManager controlling this screen
      */
     public WordSearchGUI(GameManager manager) {
         //TODO Create puzzle grid, word list, buttons
@@ -43,14 +43,16 @@ public class WordSearchGUI {
     }
 
     /**
-     * Display Word Search GUI
+     * Display Word Search GUI.
      */
     public void display() {
         // Show GUI
         frame.setExtendedState(JFrame.MAXIMIZED_BOTH);
         frame.setVisible(true);
     }
-    
+    /**
+     * Hide Word Search GUI.
+     */
     public void hide() {
         frame.setVisible(false);
     }

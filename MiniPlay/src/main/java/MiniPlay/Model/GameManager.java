@@ -7,21 +7,21 @@ package MiniPlay.Model;
 import MiniPlay.GUI.*;
 
 /**
- * Manages the MiniPlay app as a whole.
- * Is responsible for switching between games and handling the game sessions
+ * Manages the MiniPlay GUIS.
+ * Holds references to all the Main Menu and all the game GUIS and handles the switching between them
  */
 public class GameManager {
-    /**
-     * Constructs a GameManager instance
-     */
     
     private MainMenu mainMenu;
     private tttGUI TttGUI;
     private CrosswordGUI crosswordGUI;
     private WordSearchGUI wordSearchGUI;
     
+    /**
+     * Constructs the GameManager and initializes all game GUIs.
+     */
     public GameManager() {
-        // Creates the main menu and passes this manager to it
+        // Creates the main menu and all the other GUIS
         mainMenu = new MainMenu(this);
         TttGUI = new tttGUI(this);
         crosswordGUI = new CrosswordGUI(this);
@@ -29,7 +29,7 @@ public class GameManager {
     }
     
     /**
-     * Start whichever game user selects from MainGUI
+     * Start a game based off of user selection
      * @param gameName - name of game to start
      */
     
@@ -55,7 +55,7 @@ public class GameManager {
     }
     
     /**
-     * Return to main main/mainGUI
+     * Returns to Main Menu.
      */
     
     public void returnToMain() {
@@ -66,7 +66,9 @@ public class GameManager {
         mainMenu.display();
         
     }
-    
+    /**
+     * Displays Main Menu.
+    */
     public void displayMainMenu() {
         mainMenu.display();
     }

@@ -15,7 +15,7 @@ public class CrosswordGUI {
     
      /**
      * Setup Crossword GUI
-     * @param manager
+     * @param manager the GameManager controlling this screen
      */
     public CrosswordGUI(GameManager manager) {
         this.manager = manager;
@@ -43,13 +43,17 @@ public class CrosswordGUI {
     }
 
     /**
-     * Display Crossword GUI
+     * Display Crossword GUI.
      */
     public void display() {
         // Show GUI
         frame.setExtendedState(JFrame.MAXIMIZED_BOTH);
         frame.setVisible(true);
     }
+    
+    /**
+     * Hide Crossword GUI.
+     */
     public void hide() {
         frame.setVisible(false);
     }

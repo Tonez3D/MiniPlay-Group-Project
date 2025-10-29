@@ -22,9 +22,9 @@ public class TicTacToe {
      *@param row - row index
      *@param col - column index
      *@param symbol - 'X' or 'O'
-     *return true - move is value, otherwise false
+     *@return true - move is value, otherwise false
      */
-    public boolean placeMove(int row, int col, char symbole) {
+    public boolean placeMove(int row, int col, char symbol) {
         // move logic
         return false;
     }

@@ -14,7 +14,7 @@ public class tttGUI {
     private GameManager manager;
     /**
      * Construct Tic Tac Toe GUI
-     * @param manager
+     * @param manager the GameManager controlling this screen
      */
     public tttGUI(GameManager manager) {
         //TODO Set up 3x3 board and message area
@@ -48,7 +48,9 @@ public class tttGUI {
         frame.setExtendedState(JFrame.MAXIMIZED_BOTH);
         frame.setVisible(true);
     }
-    
+    /**
+     * Hide the Tic Tac Toe GUI.
+     */
     public void hide() {
         frame.setVisible(false);
     }

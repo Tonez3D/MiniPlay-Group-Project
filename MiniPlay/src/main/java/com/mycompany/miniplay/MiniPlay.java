@@ -8,16 +8,19 @@ import MiniPlay.GUI.MainMenu;
 import MiniPlay.Model.GameManager;
 import javax.swing.*;
 /**
- *
- * @author cassi
+ * Entry point for the MiniPlay application.
+ * This class initializes the GameManager and launches the main menu
  */
 public class MiniPlay {
 
+    /**
+     * Starts the MiniPlay Application. 
+     * @param args command-line arguments (unused)
+     */
     public static void main(String[] args) {
         SwingUtilities.invokeLater(() -> {
             GameManager manager = new GameManager();  // central logic handler
-            MainMenu menu = new MainMenu(manager);    // pass it into the GUI
-            menu.display();                           // show main menu
+            manager.displayMainMenu();                           // show main menu through GameManager
         });
     }
 }
