@@ -5,6 +5,7 @@
 package com.mycompany.miniplay;
 
 import MiniPlay.GUI.MainMenu;
+import MiniPlay.Model.GameManager;
 import javax.swing.*;
 /**
  *
@@ -13,14 +14,10 @@ import javax.swing.*;
 public class MiniPlay {
 
     public static void main(String[] args) {
-        
-        MainMenu maink = new MainMenu();
-        SwingUtilities.invokeLater(new Runnable() {
-    public void run() {
-            maink.display();
-        }
-          });
-    
-}
-
+        SwingUtilities.invokeLater(() -> {
+            GameManager manager = new GameManager();  // central logic handler
+            MainMenu menu = new MainMenu(manager);    // pass it into the GUI
+            menu.display();                           // show main menu
+        });
+    }
 }

@@ -4,6 +4,8 @@
  */
 package MiniPlay.Model;
 
+import MiniPlay.GUI.*;
+
 /**
  * Manages the MiniPlay app as a whole.
  * Is responsible for switching between games and handling the game sessions
@@ -13,8 +15,16 @@ public class GameManager {
      * Constructs a GameManager instance
      */
     
+    private MainMenu mainMenu;
+    private tttGUI TttGUI;
+    private CrosswordGUI crosswordGUI;
+    private WordSearchGUI wordSearchGUI;
+    
     public GameManager() {
-        // Initialize games
+        // Creates the main menu and passes this manager to it
+        mainMenu = new MainMenu(this);
+        TttGUI = new tttGUI(this);
+        crosswordGUI = new CrosswordGUI(this);
     }
     
     /**
@@ -24,6 +34,23 @@ public class GameManager {
     
     public void startGame(String gameName) {
         // Game startup logic
+        mainMenu.hide();
+        
+        switch (gameName) {
+            case "TicTacToe":
+                TttGUI.display();
+                break;
+            case "Crossword":
+                crosswordGUI.display();
+                break;
+            case "WordSearch":
+                wordSearchGUI.display();
+                break;
+            default:
+                System.err.println("Unknown Game: " + gameName);
+                
+        }
+        
     }
     
     /**
@@ -31,6 +58,15 @@ public class GameManager {
      */
     
     public void returnToMain() {
-        // Main menu navigation
+        //Hides all game GUIS and displays main menu
+        TttGUI.hide();
+        crosswordGUI.hide();
+        wordSearchGUI.hide();
+        mainMenu.display();
+        
+    }
+    
+    public void displayMainMenu() {
+        mainMenu.display();
     }
 }

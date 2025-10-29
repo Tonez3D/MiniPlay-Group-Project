@@ -3,7 +3,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 package MiniPlay.GUI;
-
+import MiniPlay.Model.GameManager;
 import javax.swing.*;
 
 /**
@@ -11,12 +11,16 @@ import javax.swing.*;
  */
 
 public class WordSearchGUI {
+    private JFrame frame;
+    private GameManager manager;
      
     /**
      * Creates Word Search GUI
+     * @param manager
      */
-    public WordSearchGUI() {
-        // Create puzzle grid, word list, buttons
+    public WordSearchGUI(GameManager manager) {
+        //TODO Create puzzle grid, word list, buttons
+        //Below is a temp placeholder to show that the game manager works
     }
 
     /**
@@ -24,5 +28,9 @@ public class WordSearchGUI {
      */
     public void display() {
         // Show GUI
+    }
+    
+    public void hide() {
+        frame.setVisible(false);
     }
 }

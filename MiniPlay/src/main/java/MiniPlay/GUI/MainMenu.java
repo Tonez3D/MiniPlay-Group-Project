@@ -5,6 +5,7 @@
 package MiniPlay.GUI;
 
 import javax.swing.*;
+import MiniPlay.Model.GameManager;
 
 /**
  * Main menu GUI for MiniPlay
@@ -13,19 +14,68 @@ import javax.swing.*;
 public class MainMenu {
     
     private JFrame frame;
+    private GameManager gameManager;
 
     /**
      * Constructs main menu GUI
+     * @param gameManager the central GameManager instance
      */
-    public MainMenu() {
-        // Initialize JFrame and add buttons
+    public MainMenu(GameManager gameManager) {
+        this.gameManager = gameManager;
+
         frame = new JFrame("Mini Play");
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+
+        // Use a panel with vertical layout
+        JPanel panel = new JPanel();
+        panel.setLayout(new BoxLayout(panel, BoxLayout.Y_AXIS));
+
+        // Title label
+        JLabel label = new JLabel("Welcome to Mini Play!", SwingConstants.CENTER);
+        label.setAlignmentX(JLabel.CENTER_ALIGNMENT);
+        label.setBorder(BorderFactory.createEmptyBorder(50, 0, 20, 0)); // spacing from top
+
+        // Buttons
+        JButton tttButton = new JButton("Play Tic Tac Toe");
+        JButton crosswordButton = new JButton("Play Crossword");
+        JButton wordSearchButton = new JButton("Play WordSearch");
+        JButton exitButton = new JButton("Exit");
+
+        // Center buttons horizontally
+        tttButton.setAlignmentX(JButton.CENTER_ALIGNMENT);
+        crosswordButton.setAlignmentX(JButton.CENTER_ALIGNMENT);
+        wordSearchButton.setAlignmentX(JButton.CENTER_ALIGNMENT);
+        exitButton.setAlignmentX(JButton.CENTER_ALIGNMENT);
+
+        // Add actions
+        tttButton.addActionListener(e -> {
+            hide();
+            gameManager.startGame("TicTacToe");
+        });
+
+        crosswordButton.addActionListener(e -> {
+            hide();
+            gameManager.startGame("Crossword");
+        });
         
-        JLabel label = new JLabel("Welcome to Mini Play!");
-        frame.getContentPane().add(label);
-        
-        frame.pack();
+        wordSearchButton.addActionListener(e -> {
+            hide();
+            gameManager.startGame("WordSearch");
+        });
+
+        exitButton.addActionListener(e -> System.exit(0));
+
+        // Add components to panel
+        panel.add(label);
+        panel.add(tttButton);
+        panel.add(Box.createVerticalStrut(10));
+        panel.add(crosswordButton);
+        panel.add(Box.createVerticalStrut(10));
+        panel.add(wordSearchButton);
+        panel.add(Box.createVerticalStrut(10));
+        panel.add(exitButton);
+
+        frame.getContentPane().add(panel);
     }
 
     /**
@@ -33,6 +83,7 @@ public class MainMenu {
      */
     public void display() {
         // Show the main menu
+        frame.setExtendedState(JFrame.MAXIMIZED_BOTH);
         frame.setVisible(true);
     }
     /**
