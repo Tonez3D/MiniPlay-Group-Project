@@ -11,20 +11,22 @@ import javax.swing.*;
  */
 
 public class WordSearchGUI {
-    private JFrame frame;
-    private GameManager manager;
+    private JPanel frame;
+    //private GameManager manager;
      
     /**
      * Creates Word Search GUI
      * @param manager the GameManager controlling this screen
      */
-    public WordSearchGUI(GameManager manager) {
+    public WordSearchGUI(GameManager manager, JPanel root_frame) {
         //TODO Create puzzle grid, word list, buttons
         //Below is a temp placeholder to show that the game manager works
-        this.manager = manager;
+        //this.manager = manager;
 
-        frame = new JFrame("Word Search");
-        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+
+        frame = new JPanel();
+        root_frame.add(frame);
+        //frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
         JLabel label = new JLabel("Word Search (placeholder)", SwingConstants.CENTER);
         JButton back = new JButton("Return to Main Menu");
@@ -39,7 +41,7 @@ public class WordSearchGUI {
         panel.add(Box.createVerticalStrut(10));
         panel.add(back);
 
-        frame.getContentPane().add(panel);
+        frame.add(panel);
     }
 
     /**
@@ -47,7 +49,7 @@ public class WordSearchGUI {
      */
     public void display() {
         // Show GUI
-        frame.setExtendedState(JFrame.MAXIMIZED_BOTH);
+        //frame.setExtendedState(JFrame.MAXIMIZED_BOTH);
         frame.setVisible(true);
     }
     /**

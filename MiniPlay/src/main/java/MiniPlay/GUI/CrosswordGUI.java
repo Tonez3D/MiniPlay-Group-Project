@@ -10,21 +10,22 @@ import javax.swing.*;
  * GUI for Crossword Puzzle game
  */
 public class CrosswordGUI {
-    private JFrame frame;
-    private GameManager manager;
+    private JPanel frame;
+    //private GameManager manager;
     
      /**
      * Setup Crossword GUI
      * @param manager the GameManager controlling this screen
      */
-    public CrosswordGUI(GameManager manager) {
-        this.manager = manager;
+    public CrosswordGUI(GameManager manager, JPanel frame_panel) {
+        //this.manager = manager;
         //TODO Setup crossword grid and clue panels
         //Below is a temp placeholder to show that the game manager works
-        this.manager = manager;
+        //this.manager = manager;
 
-        frame = new JFrame("Crossword");
-        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        frame = new JPanel();
+        frame_panel.add(frame);
+        //frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
         JLabel label = new JLabel("Crossword (placeholder)", SwingConstants.CENTER);
         JButton back = new JButton("Return to Main Menu");
@@ -39,7 +40,7 @@ public class CrosswordGUI {
         panel.add(Box.createVerticalStrut(10));
         panel.add(back);
 
-        frame.getContentPane().add(panel);
+        frame.add(panel);
     }
 
     /**
@@ -47,7 +48,7 @@ public class CrosswordGUI {
      */
     public void display() {
         // Show GUI
-        frame.setExtendedState(JFrame.MAXIMIZED_BOTH);
+        //frame.setExtendedState(JFrame.MAXIMIZED_BOTH);
         frame.setVisible(true);
     }
     

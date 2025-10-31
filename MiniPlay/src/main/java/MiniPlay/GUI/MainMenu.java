@@ -13,18 +13,19 @@ import MiniPlay.Model.GameManager;
  */
 public class MainMenu {
     
-    private JFrame frame;
-    private GameManager gameManager;
+    private JPanel frame;
+    //private GameManager gameManager;
 
     /**
      * Constructs main menu GUI
      * @param gameManager the central GameManager instance
      */
-    public MainMenu(GameManager gameManager) {
-        this.gameManager = gameManager;
+    public MainMenu(GameManager gameManager, JPanel root_frame) {
+        //this.gameManager = gameManager;
 
-        frame = new JFrame("Mini Play");
-        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        frame = new JPanel();
+
+        root_frame.add(frame);
 
         // Use a panel with vertical layout
         JPanel panel = new JPanel();
@@ -75,7 +76,7 @@ public class MainMenu {
         panel.add(Box.createVerticalStrut(10));
         panel.add(exitButton);
 
-        frame.getContentPane().add(panel);
+        frame.add(panel);
     }
 
     /**
@@ -83,7 +84,7 @@ public class MainMenu {
      */
     public void display() {
         // Show the main menu
-        frame.setExtendedState(JFrame.MAXIMIZED_BOTH);
+        //frame.setExtendedState(JFrame.MAXIMIZED_BOTH);
         frame.setVisible(true);
     }
     /**

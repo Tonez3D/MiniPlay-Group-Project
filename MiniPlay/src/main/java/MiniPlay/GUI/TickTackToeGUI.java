@@ -9,20 +9,22 @@ import javax.swing.*;
 /**
  * GUI for Tic Tac Toe game
  */
-public class tttGUI {
-    private JFrame frame;
-    private GameManager manager;
+public class TickTackToeGUI {
+    private JPanel frame;
+    //private GameManager manager;
+
     /**
      * Construct Tic Tac Toe GUI
      * @param manager the GameManager controlling this screen
      */
-    public tttGUI(GameManager manager) {
+    public TickTackToeGUI(GameManager manager, JPanel root_frame) {
         //TODO Set up 3x3 board and message area
         //Below is a temp placeholder to show that the game manager works
-        this.manager = manager;
+        //this.manager = manager;
 
-        frame = new JFrame("Tic Tac Toe");
-        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        frame = new JPanel();
+        root_frame.add(frame);
+        //frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
         JLabel label = new JLabel("Tic Tac Toe (placeholder)", SwingConstants.CENTER);
         JButton back = new JButton("Return to Main Menu");
@@ -37,7 +39,7 @@ public class tttGUI {
         panel.add(Box.createVerticalStrut(10));
         panel.add(back);
 
-        frame.getContentPane().add(panel);
+        frame.add(panel);
     }
 
     /**
@@ -45,7 +47,7 @@ public class tttGUI {
      */
     public void display() {
         // Show GUI
-        frame.setExtendedState(JFrame.MAXIMIZED_BOTH);
+        //frame.setExtendedState(JFrame.MAXIMIZED_BOTH);
         frame.setVisible(true);
     }
     /**
