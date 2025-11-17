@@ -29,17 +29,17 @@ public class WordSearchGUI {
         //frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
         JLabel label = new JLabel("Word Search (placeholder)", SwingConstants.CENTER);
-        JButton back = new JButton("Return to Main Menu");
-        back.addActionListener(e -> manager.returnToMain());
+        JButton backButton = new JButton("Return to Main Menu");
+        backButton.addActionListener(e -> manager.returnToMain());
 
         JPanel panel = new JPanel();
         panel.setLayout(new BoxLayout(panel, BoxLayout.Y_AXIS));
         label.setAlignmentX(JLabel.CENTER_ALIGNMENT);
-        back.setAlignmentX(JButton.CENTER_ALIGNMENT);
+        backButton.setAlignmentX(JButton.CENTER_ALIGNMENT);
         panel.add(Box.createVerticalStrut(50));
         panel.add(label);
         panel.add(Box.createVerticalStrut(10));
-        panel.add(back);
+        panel.add(backButton);
 
         frame.add(panel);
     }

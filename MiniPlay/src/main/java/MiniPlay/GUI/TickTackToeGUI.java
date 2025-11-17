@@ -3,7 +3,12 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 package MiniPlay.GUI;
+
 import MiniPlay.Model.GameManager;
+import MiniPlay.Model.Grid;
+import MiniPlay.Model.GridCell;
+import MiniPlay.Model.TickTacToe.TicTacToeGridCell;
+
 import javax.swing.*;
 
 /**
@@ -26,18 +31,22 @@ public class TickTackToeGUI {
         root_frame.add(frame);
         //frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
-        JLabel label = new JLabel("Tic Tac Toe (placeholder)", SwingConstants.CENTER);
-        JButton back = new JButton("Return to Main Menu");
-        back.addActionListener(e -> manager.returnToMain());
+        JPanel ui = new Grid(1, 3, new TicTacToeGridCell(10, 10));
+        JButton back_button = new JButton("Return to Main Menu");
+        back_button.addActionListener(e -> manager.returnToMain());
+
+        ui.setVisible(true);
 
         JPanel panel = new JPanel();
         panel.setLayout(new BoxLayout(panel, BoxLayout.Y_AXIS));
-        label.setAlignmentX(JLabel.CENTER_ALIGNMENT);
-        back.setAlignmentX(JButton.CENTER_ALIGNMENT);
+        ui.setAlignmentX(JLabel.CENTER_ALIGNMENT);
+        back_button.setAlignmentX(JButton.CENTER_ALIGNMENT);
         panel.add(Box.createVerticalStrut(50));
-        panel.add(label);
+        panel.add(ui);
         panel.add(Box.createVerticalStrut(10));
-        panel.add(back);
+
+        panel.add(back_button);
+
 
         frame.add(panel);
     }
