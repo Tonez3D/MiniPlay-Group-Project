@@ -33,17 +33,23 @@ public class Grid extends JPanel {
         this.grid_cols = cols;
 
         grid_panel = new JPanel();
-        constraints = new  GridBagConstraints();
+        constraints = new GridBagConstraints();
         layout = new GridBagLayout();
+
+        constraints.gridwidth = 1;
+        constraints.gridheight = 1;
+
+
+
         grid_panel.setLayout(layout);
+        //constraints.gridheight = 30;
+        //constraints.fill = GridBagConstraints.BOTH;
+        for  (int i = 0; i < rows * cols; i++) {
 
-
-        for  (int i = 0; i < 9; i++) {
-
-            addObject(cell, i,i);
+            addObject(cell, i / rows,i % rows);
 
         }
-        //grid_panel.add(cell, grid_layout);
+        grid_panel.setSize(grid_panel.getMaximumSize());
         grid_panel.setVisible(true);
         this.add(grid_panel);
     }
@@ -53,8 +59,11 @@ public class Grid extends JPanel {
         constraints.gridx = posx;
         constraints.gridy = posy;
 
-        constraints.gridwidth = 1;
-        constraints.gridheight = 1;
+        //These need to passed into the object
+        constraints.ipadx = 70;
+        constraints.ipady = 30;
+
+
 
         layout.setConstraints(component, constraints);
 

@@ -10,6 +10,7 @@ import MiniPlay.Model.GridCell;
 import MiniPlay.Model.TickTacToe.TicTacToeGridCell;
 
 import javax.swing.*;
+import java.awt.*;
 
 /**
  * GUI for Tic Tac Toe game
@@ -31,24 +32,29 @@ public class TickTackToeGUI {
         root_frame.add(frame);
         //frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
-        JPanel ui = new Grid(1, 3, new TicTacToeGridCell(10, 10));
+        JPanel ui = new Grid(3, 3, new TicTacToeGridCell(1, 1));
+        ui.setSize(ui.getMaximumSize());
         JButton back_button = new JButton("Return to Main Menu");
         back_button.addActionListener(e -> manager.returnToMain());
 
         ui.setVisible(true);
 
         JPanel panel = new JPanel();
+        panel.setMinimumSize(new Dimension(500,200));
         panel.setLayout(new BoxLayout(panel, BoxLayout.Y_AXIS));
         ui.setAlignmentX(JLabel.CENTER_ALIGNMENT);
         back_button.setAlignmentX(JButton.CENTER_ALIGNMENT);
-        panel.add(Box.createVerticalStrut(50));
+        panel.add(Box.createVerticalStrut(300));
         panel.add(ui);
-        panel.add(Box.createVerticalStrut(10));
+        //panel.add(Box.createVerticalStrut(500));
 
         panel.add(back_button);
-
+        frame.setSize(800,800);
 
         frame.add(panel);
+        JLabel t = new JLabel("WEEE");
+        t.setAlignmentX(JLabel.CENTER_ALIGNMENT);
+        //panel.add(t);
     }
 
     /**

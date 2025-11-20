@@ -55,6 +55,20 @@ public abstract class GridCell extends JPanel implements MouseListener, Cloneabl
         return panel;
 
     }
+
+    public JComponent createComp( Dimension size) {
+        JPanel panel = new JPanel();
+        panel.setSize(1, 1);
+        //panel.setBackground(color);
+        JLabel label = new JLabel("HI");
+        label.setPreferredSize(size);
+        panel.add(label);
+        //panel;
+        panel.setVisible(true);
+        return panel;
+
+    }
+
     public Color getColor() {
         return color;
     }

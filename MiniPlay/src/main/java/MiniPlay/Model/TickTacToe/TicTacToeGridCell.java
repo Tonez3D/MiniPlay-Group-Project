@@ -38,14 +38,33 @@ public class TicTacToeGridCell extends GridCell {
     @Override
     public JComponent createComp() {
         JPanel panel = new JPanel();
-        panel.setSize(1, 1);
+        panel.setLayout(new BoxLayout(panel, BoxLayout.Y_AXIS));
+        panel.setSize(20, 40);
         //panel.setBackground(color);
-        JLabel label = new JLabel("HII");
-        panel.add(label);
+
+        JPanel panel_1 = new JPanel();
+        panel_1.setSize(40, 30);
+        panel_1.setBorder(BorderFactory.createLineBorder(Color.GRAY, 2));
+
+        panel.add(panel_1);
+
         //panel;
         panel.setVisible(true);
         return panel;
 
+    }
+
+    @Override
+    public JComponent createComp(Dimension size) {
+        JPanel panel = new JPanel();
+        panel.setSize(1, 1);
+        //panel.setBackground(color);
+        JLabel label = new JLabel("HII");
+        label.setPreferredSize(size);
+        panel.add(label);
+        //panel;
+        panel.setVisible(true);
+        return panel;
     }
 
     @Override
