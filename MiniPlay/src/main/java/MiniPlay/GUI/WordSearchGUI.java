@@ -1,61 +1,37 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package MiniPlay.GUI;
+
 import MiniPlay.Model.GameManager;
+import MiniPlay.Model.Grid;
+import MiniPlay.Model.WordSearch.WordSearchCell;
+
 import javax.swing.*;
+import java.awt.*;
 
 /**
- * GUI for Word Search game
+ * Word Search game screen.
+ * Currently generates a random letter grid you can click to highlight.
  */
-
 public class WordSearchGUI {
-    private JPanel frame;
-    //private GameManager manager;
-     
-    /**
-     * Creates Word Search GUI
-     * @param manager the GameManager controlling this screen
-     */
-    public WordSearchGUI(GameManager manager, JPanel root_frame) {
-        //TODO Create puzzle grid, word list, buttons
-        //Below is a temp placeholder to show that the game manager works
-        //this.manager = manager;
 
+    private JPanel panel;
 
-        frame = new JPanel();
-        root_frame.add(frame);
-        //frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+    public WordSearchGUI(GameManager manager) {
 
-        JLabel label = new JLabel("Word Search (placeholder)", SwingConstants.CENTER);
-        JButton backButton = new JButton("Return to Main Menu");
-        backButton.addActionListener(e -> manager.returnToMain());
+        panel = new JPanel(new BorderLayout());
 
-        JPanel panel = new JPanel();
-        panel.setLayout(new BoxLayout(panel, BoxLayout.Y_AXIS));
-        label.setAlignmentX(JLabel.CENTER_ALIGNMENT);
-        backButton.setAlignmentX(JButton.CENTER_ALIGNMENT);
-        panel.add(Box.createVerticalStrut(50));
-        panel.add(label);
-        panel.add(Box.createVerticalStrut(10));
-        panel.add(backButton);
+        JLabel title = new JLabel("Word Search (prototype)", SwingConstants.CENTER);
+        title.setFont(new Font("Arial", Font.BOLD, 24));
+        panel.add(title, BorderLayout.NORTH);
 
-        frame.add(panel);
+        Grid grid = new Grid(10, 10, WordSearchCell.class);
+        panel.add(grid, BorderLayout.CENTER);
+
+        JButton backBtn = new JButton("Back to Main Menu");
+        backBtn.addActionListener(e -> manager.showMainMenu());
+        panel.add(backBtn, BorderLayout.SOUTH);
     }
 
-    /**
-     * Display Word Search GUI.
-     */
-    public void display() {
-        // Show GUI
-        //frame.setExtendedState(JFrame.MAXIMIZED_BOTH);
-        frame.setVisible(true);
-    }
-    /**
-     * Hide Word Search GUI.
-     */
-    public void hide() {
-        frame.setVisible(false);
+    public JPanel getPanel() {
+        return panel;
     }
 }

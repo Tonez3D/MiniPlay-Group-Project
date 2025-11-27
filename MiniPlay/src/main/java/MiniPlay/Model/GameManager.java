@@ -1,91 +1,83 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package MiniPlay.Model;
 
 import MiniPlay.GUI.*;
-
 import javax.swing.*;
 import java.awt.*;
 
 /**
- * Manages the MiniPlay GUIS.
- * Holds references to all the Main Menu and all the game GUIS and handles the switching between them
+ * Central controller for MiniPlay.
+ * Holds the main window and swaps between all game screens.
  */
 public class GameManager {
 
+    private JFrame window;
+    private JPanel cardPanel;
+    private CardLayout cardLayout;
+
     private MainMenu mainMenu;
-    private TickTackToeGUI TickTackToeGUI;
+    private TicTacToeGUI ticTacToeGUI;
     private CrosswordGUI crosswordGUI;
     private WordSearchGUI wordSearchGUI;
-    private JFrame window_root_frame;
-    private JPanel display_panel;
-    /**
-     * Constructs the GameManager and initializes all game GUIs.
-     */
+    private ColorFillGUI colorFillGUI;   // optional extra
+
+    // Card names
+    public static final String MAIN_MENU   = "MAIN_MENU";
+    public static final String TICTACTOE   = "TICTACTOE";
+    public static final String CROSSWORD   = "CROSSWORD";
+    public static final String WORDSEARCH  = "WORDSEARCH";
+    public static final String COLORFILL   = "COLORFILL";
+
     public GameManager() {
-        // Creates the main menu and all the other GUIS
-        window_root_frame = new JFrame("MiniPlay");
-        display_panel = new JPanel();
-        display_panel.setVisible(true);
-        window_root_frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        window_root_frame.setSize(new Dimension(1390,800));
-        window_root_frame.setVisible(true);
-        window_root_frame.add(display_panel);
 
-        mainMenu = new MainMenu(this, this.display_panel);
+        // ----- Window -----
+        window = new JFrame("MiniPlay");
+        window.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        window.setSize(new Dimension(1200, 900));
 
-        TickTackToeGUI = new TickTackToeGUI(this, this.display_panel);
-        TickTackToeGUI.hide();
+        cardLayout = new CardLayout();
+        cardPanel  = new JPanel(cardLayout);
+        window.setContentPane(cardPanel);
 
-        crosswordGUI = new CrosswordGUI(this, this.display_panel);
-        crosswordGUI.hide();
+        // ----- Create screens -----
+        mainMenu      = new MainMenu(this);
+        ticTacToeGUI  = new TicTacToeGUI(this);
+        crosswordGUI  = new CrosswordGUI(this);
+        wordSearchGUI = new WordSearchGUI(this);
+        colorFillGUI  = new ColorFillGUI(this);  // just a demo screen
 
-        wordSearchGUI = new WordSearchGUI(this, this.display_panel);
-        wordSearchGUI.hide();
+        // ----- Register screens with CardLayout -----
+        cardPanel.add(mainMenu.getPanel(),      MAIN_MENU);
+        cardPanel.add(ticTacToeGUI.getPanel(),  TICTACTOE);
+        cardPanel.add(crosswordGUI.getPanel(),  CROSSWORD);
+        cardPanel.add(wordSearchGUI.getPanel(), WORDSEARCH);
+        cardPanel.add(colorFillGUI.getPanel(),  COLORFILL);
+
+        // Show main menu first
+        showMainMenu();
+
+        window.setLocationRelativeTo(null);
+        window.setVisible(true);
     }
 
-    /**
-     * Start a game based off of user selection
-     *
-     * @param gameName - name of game to start
-     */
-    public void startGame(String gameName) {
-        // Game startup logic
-        mainMenu.hide();
+    // ----- Navigation API called by the GUIs -----
 
-        switch (gameName) {
-            case "TicTacToe":
-                TickTackToeGUI.display();
-                break;
-            case "Crossword":
-                crosswordGUI.display();
-                break;
-            case "WordSearch":
-                wordSearchGUI.display();
-                break;
-            default:
-                System.err.println("Unknown Game: " + gameName);
-        }
+    public void showMainMenu() {
+        cardLayout.show(cardPanel, MAIN_MENU);
     }
 
-    /**
-     * Returns to Main Menu.
-     */
-    public void returnToMain() {
-        //Hides all game GUIS and displays main menu
-        if (TickTackToeGUI != null) TickTackToeGUI.hide();
-        if (crosswordGUI != null) crosswordGUI.hide();
-        if (wordSearchGUI != null) wordSearchGUI.hide();
-        mainMenu.display();
-
+    public void startTicTacToe() {
+        cardLayout.show(cardPanel, TICTACTOE);
     }
 
-    /**
-     * Displays Main Menu.
-     */
-    public void displayMainMenu() {
-        mainMenu.display();
+    public void startCrossword() {
+        cardLayout.show(cardPanel, CROSSWORD);
+    }
+
+    public void startWordSearch() {
+        cardLayout.show(cardPanel, WORDSEARCH);
+    }
+
+    public void startColorFill() {
+        cardLayout.show(cardPanel, COLORFILL);
     }
 }

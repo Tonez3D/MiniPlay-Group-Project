@@ -1,21 +1,22 @@
-package MiniPlay.Model.Crossword;
+package MiniPlay.Model.WordSearch;
 
 import MiniPlay.Model.GridCell;
 import javax.swing.*;
 import java.awt.*;
 
-public class CrosswordCell extends GridCell {
+public class WordSearchCell extends GridCell {
 
-    private char letter = ' ';
+    private char letter;
 
-    public CrosswordCell(int r, int c) {
+    public WordSearchCell(int r, int c) {
         super(r, c);
+        letter = (char) ('A' + (int)(Math.random() * 26));
         render();
     }
 
     @Override
     public void handleClick() {
-        letter = (char) ('A' + (int)(Math.random() * 26));
+        this.setBackground(Color.YELLOW);
     }
 
     @Override
@@ -24,6 +25,7 @@ public class CrosswordCell extends GridCell {
         JLabel label = new JLabel(String.valueOf(letter), SwingConstants.CENTER);
         label.setFont(new Font("Arial", Font.BOLD, 20));
         this.add(label);
+
         this.revalidate();
         this.repaint();
     }

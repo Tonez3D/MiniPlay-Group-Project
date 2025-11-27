@@ -1,97 +1,53 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package MiniPlay.GUI;
 
-import javax.swing.*;
 import MiniPlay.Model.GameManager;
+import javax.swing.*;
+import java.awt.*;
 
 /**
- * Main menu GUI for MiniPlay
- * Allows users to select game and exit
+ * Main menu screen – lets the user pick a mini-game.
  */
 public class MainMenu {
-    
-    private JPanel frame;
-    //private GameManager gameManager;
 
-    /**
-     * Constructs main menu GUI
-     * @param gameManager the central GameManager instance
-     */
-    public MainMenu(GameManager gameManager, JPanel root_frame) {
-        //this.gameManager = gameManager;
+    private JPanel panel;
 
-        frame = new JPanel();
+    public MainMenu(GameManager manager) {
 
-        root_frame.add(frame);
-
-        // Use a panel with vertical layout
-        JPanel panel = new JPanel();
+        panel = new JPanel();
         panel.setLayout(new BoxLayout(panel, BoxLayout.Y_AXIS));
 
-        // Title label
-        JLabel label = new JLabel("Welcome to Mini Play!", SwingConstants.CENTER);
-        label.setAlignmentX(JLabel.CENTER_ALIGNMENT);
-        label.setBorder(BorderFactory.createEmptyBorder(50, 0, 20, 0)); // spacing from top
+        JLabel title = new JLabel("MiniPlay", SwingConstants.CENTER);
+        title.setFont(new Font("Arial", Font.BOLD, 32));
+        title.setAlignmentX(Component.CENTER_ALIGNMENT);
 
-        // Buttons
-        JButton tttButton = new JButton("Play Tic Tac Toe");
-        JButton crosswordButton = new JButton("Play Crossword");
-        JButton wordSearchButton = new JButton("Play WordSearch");
-        JButton exitButton = new JButton("Exit");
+        JButton ticTacToeBtn = new JButton("Play Tic-Tac-Toe");
+        JButton crosswordBtn = new JButton("Play Crossword");
+        JButton wordSearchBtn = new JButton("Play Word Search");
+        JButton colorFillBtn = new JButton("Color Fill Demo");
 
-        // Center buttons horizontally
-        tttButton.setAlignmentX(JButton.CENTER_ALIGNMENT);
-        crosswordButton.setAlignmentX(JButton.CENTER_ALIGNMENT);
-        wordSearchButton.setAlignmentX(JButton.CENTER_ALIGNMENT);
-        exitButton.setAlignmentX(JButton.CENTER_ALIGNMENT);
+        ticTacToeBtn.setAlignmentX(Component.CENTER_ALIGNMENT);
+        crosswordBtn.setAlignmentX(Component.CENTER_ALIGNMENT);
+        wordSearchBtn.setAlignmentX(Component.CENTER_ALIGNMENT);
+        colorFillBtn.setAlignmentX(Component.CENTER_ALIGNMENT);
 
-        // Add actions
-        tttButton.addActionListener(e -> {
-            hide();
-            gameManager.startGame("TicTacToe");
-        });
+        ticTacToeBtn.addActionListener(e -> manager.startTicTacToe());
+        crosswordBtn.addActionListener(e -> manager.startCrossword());
+        wordSearchBtn.addActionListener(e -> manager.startWordSearch());
+        colorFillBtn.addActionListener(e -> manager.startColorFill());
 
-        crosswordButton.addActionListener(e -> {
-            hide();
-            gameManager.startGame("Crossword");
-        });
-        
-        wordSearchButton.addActionListener(e -> {
-            hide();
-            gameManager.startGame("WordSearch");
-        });
-
-        exitButton.addActionListener(e -> System.exit(0));
-
-        // Add components to panel
-        panel.add(label);
-        panel.add(tttButton);
+        panel.add(Box.createVerticalStrut(40));
+        panel.add(title);
+        panel.add(Box.createVerticalStrut(30));
+        panel.add(ticTacToeBtn);
         panel.add(Box.createVerticalStrut(10));
-        panel.add(crosswordButton);
+        panel.add(crosswordBtn);
         panel.add(Box.createVerticalStrut(10));
-        panel.add(wordSearchButton);
+        panel.add(wordSearchBtn);
         panel.add(Box.createVerticalStrut(10));
-        panel.add(exitButton);
-
-        frame.add(panel);
+        panel.add(colorFillBtn);
     }
 
-    /**
-     * Display main menu
-     */
-    public void display() {
-        // Show the main menu
-        //frame.setExtendedState(JFrame.MAXIMIZED_BOTH);
-        frame.setVisible(true);
+    public JPanel getPanel() {
+        return panel;
     }
-    /**
-     * Hide the main menu
-     */
-    public void hide() {
-        frame.setVisible(false);
-    }
-    
 }

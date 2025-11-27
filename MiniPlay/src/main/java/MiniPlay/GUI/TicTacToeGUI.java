@@ -2,28 +2,28 @@ package MiniPlay.GUI;
 
 import MiniPlay.Model.GameManager;
 import MiniPlay.Model.Grid;
-import MiniPlay.Model.Crossword.CrosswordCell;
+import MiniPlay.Model.TicTacToe.TicTacToeGridCell;
 
 import javax.swing.*;
 import java.awt.*;
 
 /**
- * Crossword puzzle screen.
- * (Right now it just fills the grid with clickable letter cells.)
+ * Tic-Tac-Toe game screen.
  */
-public class CrosswordGUI {
+public class TicTacToeGUI {
 
     private JPanel panel;
 
-    public CrosswordGUI(GameManager manager) {
+    public TicTacToeGUI(GameManager manager) {
 
         panel = new JPanel(new BorderLayout());
 
-        JLabel title = new JLabel("Crossword (prototype)", SwingConstants.CENTER);
+        JLabel title = new JLabel("Tic-Tac-Toe", SwingConstants.CENTER);
         title.setFont(new Font("Arial", Font.BOLD, 24));
         panel.add(title, BorderLayout.NORTH);
 
-        Grid grid = new Grid(10, 10, CrosswordCell.class);
+        // 3x3 grid of TicTacToeGridCell
+        Grid grid = new Grid(3, 3, TicTacToeGridCell.class);
         panel.add(grid, BorderLayout.CENTER);
 
         JButton backBtn = new JButton("Back to Main Menu");

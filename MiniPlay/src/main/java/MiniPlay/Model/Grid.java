@@ -1,93 +1,35 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package MiniPlay.Model;
 
-import MiniPlay.Model.TickTacToe.TicTacToeGridCell;
-
-import java.awt.*;
 import javax.swing.*;
+import java.awt.*;
 
-/**
- * 2D grid used for games like Word Search and Crossword
- */
 public class Grid extends JPanel {
-   private int grid_rows;
-   private int grid_cols;
 
-   private GridBagConstraints constraints;
-   private GridBagLayout layout;
-   JPanel grid_panel;
-   GridCell[] grid;
+    private GridCell[][] cells;
 
+    public Grid(int rows, int cols, Class<? extends GridCell> cellType) {
+        this.setLayout(new GridLayout(rows, cols));
+        cells = new GridCell[rows][cols];
 
-    /**
-     * Construct a grid with specified size
-     * @param rows - Number of rows
-     * @param cols - Number of columns
-     */
-    public Grid(int rows, int cols, GridCell cell) {
+        // Create all cells dynamically
+        for (int r = 0; r < rows; r++) {
+            for (int c = 0; c < cols; c++) {
+                try {
+                    GridCell cell = cellType
+                            .getDeclaredConstructor(int.class, int.class)
+                            .newInstance(r, c);
 
-        this.grid_rows = rows;
-        this.grid_cols = cols;
-
-        grid_panel = new JPanel();
-        constraints = new GridBagConstraints();
-        layout = new GridBagLayout();
-
-        constraints.gridwidth = 1;
-        constraints.gridheight = 1;
-
-
-
-        grid_panel.setLayout(layout);
-        //constraints.gridheight = 30;
-        //constraints.fill = GridBagConstraints.BOTH;
-        for  (int i = 0; i < rows * cols; i++) {
-
-            addObject(cell, i / rows,i % rows);
-
+                    cells[r][c] = cell;
+                    this.add(cell);
+                }
+                catch (Exception e) {
+                    e.printStackTrace();
+                }
+            }
         }
-        grid_panel.setSize(grid_panel.getMaximumSize());
-        grid_panel.setVisible(true);
-        this.add(grid_panel);
     }
 
-    private void addObject( GridCell cellType, int posx, int posy  ) {
-        JComponent component = cellType.getComp();
-        constraints.gridx = posx;
-        constraints.gridy = posy;
-
-        //These need to passed into the object
-        constraints.ipadx = 70;
-        constraints.ipady = 30;
-
-
-
-        layout.setConstraints(component, constraints);
-
-        grid_panel.add(component);
-
-    }
-    /**
-     * Set value at specific cell
-     * @param row - Row index
-     * @param col - Column index
-     * @param value - Character or object to set
-     */
-    public void setCell(int row, int col, char value) {
-        // Setter
-    }
-
-    /**
-     * Get value at specific cell
-     * @param row - Row index
-     * @param col - Column index
-     * @return Value at the cell
-     */
-    public char getCell(int row, int col) {
-        // Getter
-        return ' ';
+    public GridCell getCell(int r, int c) {
+        return cells[r][c];
     }
 }
