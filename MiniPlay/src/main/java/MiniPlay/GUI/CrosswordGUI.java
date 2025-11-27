@@ -1,3 +1,8 @@
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
+ */
+
 package MiniPlay.GUI;
 
 import MiniPlay.Model.GameManager;
@@ -7,28 +12,32 @@ import MiniPlay.Model.Crossword.CrosswordCell;
 import javax.swing.*;
 import java.awt.*;
 
-/**
- * Crossword puzzle screen.
- * (Right now it just fills the grid with clickable letter cells.)
- */
 public class CrosswordGUI {
 
     private JPanel panel;
 
     public CrosswordGUI(GameManager manager) {
 
-        panel = new JPanel(new BorderLayout());
+        panel = new JPanel() {
+            @Override
+            protected void paintComponent(Graphics g) {
+                super.paintComponent(g);
+                g.setColor(UITheme.BG);
+                g.fillRect(0, 0, getWidth(), getHeight());
+            }
+        };
+        panel.setLayout(new BorderLayout());
 
-        JLabel title = new JLabel("Crossword (prototype)", SwingConstants.CENTER);
-        title.setFont(new Font("Arial", Font.BOLD, 24));
+        JLabel title = new JLabel("Crossword", SwingConstants.CENTER);
+        title.setFont(new Font("Serif", Font.BOLD, 28));
+        title.setForeground(UITheme.ACCENT_DARK);
         panel.add(title, BorderLayout.NORTH);
 
-        Grid grid = new Grid(10, 10, CrosswordCell.class);
+        Grid grid = new Grid(10, 10, CrosswordCell.class, null);
         panel.add(grid, BorderLayout.CENTER);
 
-        JButton backBtn = new JButton("Back to Main Menu");
-        backBtn.addActionListener(e -> manager.showMainMenu());
-        panel.add(backBtn, BorderLayout.SOUTH);
+        JButton back = UIStyled.backButton("Back to Main Menu", manager);
+        panel.add(back, BorderLayout.SOUTH);
     }
 
     public JPanel getPanel() {

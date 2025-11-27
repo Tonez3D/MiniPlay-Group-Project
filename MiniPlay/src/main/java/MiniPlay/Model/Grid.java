@@ -1,3 +1,8 @@
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
+ */
+
 package MiniPlay.Model;
 
 import javax.swing.*;
@@ -7,22 +12,22 @@ public class Grid extends JPanel {
 
     private GridCell[][] cells;
 
-    public Grid(int rows, int cols, Class<? extends GridCell> cellType) {
-        this.setLayout(new GridLayout(rows, cols));
+    public Grid(int rows, int cols, Class<? extends GridCell> cellType, Object gameObj) {
+
+        setLayout(new GridLayout(rows, cols));
         cells = new GridCell[rows][cols];
 
-        // Create all cells dynamically
         for (int r = 0; r < rows; r++) {
             for (int c = 0; c < cols; c++) {
                 try {
                     GridCell cell = cellType
-                            .getDeclaredConstructor(int.class, int.class)
-                            .newInstance(r, c);
+                            .getDeclaredConstructor(int.class, int.class, Object.class)
+                            .newInstance(r, c, gameObj);
+
 
                     cells[r][c] = cell;
-                    this.add(cell);
-                }
-                catch (Exception e) {
+                    add(cell);
+                } catch (Exception e) {
                     e.printStackTrace();
                 }
             }

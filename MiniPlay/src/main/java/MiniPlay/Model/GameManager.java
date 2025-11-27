@@ -1,13 +1,15 @@
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
+ */
+
 package MiniPlay.Model;
 
 import MiniPlay.GUI.*;
 import javax.swing.*;
 import java.awt.*;
 
-/**
- * Central controller for MiniPlay.
- * Holds the main window and swaps between all game screens.
- */
+
 public class GameManager {
 
     private JFrame window;
@@ -59,7 +61,6 @@ public class GameManager {
         window.setVisible(true);
     }
 
-    // ----- Navigation API called by the GUIs -----
 
     public void showMainMenu() {
         cardLayout.show(cardPanel, MAIN_MENU);
@@ -80,4 +81,5 @@ public class GameManager {
     public void startColorFill() {
         cardLayout.show(cardPanel, COLORFILL);
     }
+    
 }

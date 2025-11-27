@@ -2,7 +2,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package MiniPlay.Model.TickTacToe;
+package MiniPlay.Model.TicTacToe;
 
 /**
  * Manages the Tic Tac Toe Game
@@ -25,7 +25,6 @@ public class TicTacToe {
      *@return true - move is value, otherwise false
      */
     public boolean placeMove(int row, int col, char symbol) {
-        // move logic
         return false;
     }
     

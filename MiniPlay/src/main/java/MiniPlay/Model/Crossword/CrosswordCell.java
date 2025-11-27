@@ -1,3 +1,8 @@
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
+ */
+
 package MiniPlay.Model.Crossword;
 
 import MiniPlay.Model.GridCell;
@@ -8,14 +13,17 @@ public class CrosswordCell extends GridCell {
 
     private char letter = ' ';
 
-    public CrosswordCell(int r, int c) {
-        super(r, c);
+    public CrosswordCell(int r, int c, Object gameObj) {
+        super(r, c, gameObj);
         render();
     }
 
     @Override
     public void handleClick() {
-        letter = (char) ('A' + (int)(Math.random() * 26));
+        String input = JOptionPane.showInputDialog("Enter letter:");
+        if (input != null && input.length() == 1) {
+            letter = Character.toUpperCase(input.charAt(0));
+        }
     }
 
     @Override
@@ -24,7 +32,7 @@ public class CrosswordCell extends GridCell {
         JLabel label = new JLabel(String.valueOf(letter), SwingConstants.CENTER);
         label.setFont(new Font("Arial", Font.BOLD, 20));
         this.add(label);
-        this.revalidate();
-        this.repaint();
+        revalidate();
+        repaint();
     }
 }

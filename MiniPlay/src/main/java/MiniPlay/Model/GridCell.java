@@ -1,3 +1,8 @@
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
+ */
+
 package MiniPlay.Model;
 
 import javax.swing.*;
@@ -8,10 +13,12 @@ public abstract class GridCell extends JPanel implements MouseListener {
 
     protected int row;
     protected int col;
+    protected Object game;   // NEW
 
-    public GridCell(int r, int c) {
+    public GridCell(int r, int c, Object gameObj) {
         this.row = r;
         this.col = c;
+        this.game = gameObj;
 
         setPreferredSize(new Dimension(40, 40));
         setBorder(BorderFactory.createLineBorder(Color.BLACK));
