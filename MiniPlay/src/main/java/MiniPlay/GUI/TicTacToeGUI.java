@@ -25,7 +25,7 @@ public class TicTacToeGUI {
             @Override
             protected void paintComponent(Graphics g) {
                 super.paintComponent(g);
-                g.setColor(UITheme.BG);
+                g.setColor(UITheme.BACKGROUND);
                 g.fillRect(0, 0, getWidth(), getHeight());
             }
         };

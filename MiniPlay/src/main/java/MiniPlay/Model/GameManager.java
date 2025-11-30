@@ -20,19 +20,19 @@ public class GameManager {
     private TicTacToeGUI ticTacToeGUI;
     private CrosswordGUI crosswordGUI;
     private WordSearchGUI wordSearchGUI;
-    private ColorFillGUI colorFillGUI;   // optional extra
 
     // Card names
     public static final String MAIN_MENU   = "MAIN_MENU";
     public static final String TICTACTOE   = "TICTACTOE";
     public static final String CROSSWORD   = "CROSSWORD";
     public static final String WORDSEARCH  = "WORDSEARCH";
-    public static final String COLORFILL   = "COLORFILL";
 
     public GameManager() {
 
         // ----- Window -----
         window = new JFrame("MiniPlay");
+        Image icon = new ImageIcon(getClass().getResource("/Images/miniplay_logo.png")).getImage();
+        window.setIconImage(icon);
         window.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         window.setSize(new Dimension(1200, 900));
 
@@ -45,14 +45,13 @@ public class GameManager {
         ticTacToeGUI  = new TicTacToeGUI(this);
         crosswordGUI  = new CrosswordGUI(this);
         wordSearchGUI = new WordSearchGUI(this);
-        colorFillGUI  = new ColorFillGUI(this);  // just a demo screen
 
         // ----- Register screens with CardLayout -----
         cardPanel.add(mainMenu.getPanel(),      MAIN_MENU);
         cardPanel.add(ticTacToeGUI.getPanel(),  TICTACTOE);
         cardPanel.add(crosswordGUI.getPanel(),  CROSSWORD);
         cardPanel.add(wordSearchGUI.getPanel(), WORDSEARCH);
-        cardPanel.add(colorFillGUI.getPanel(),  COLORFILL);
+
 
         // Show main menu first
         showMainMenu();
@@ -76,10 +75,6 @@ public class GameManager {
 
     public void startWordSearch() {
         cardLayout.show(cardPanel, WORDSEARCH);
-    }
-
-    public void startColorFill() {
-        cardLayout.show(cardPanel, COLORFILL);
     }
     
 }

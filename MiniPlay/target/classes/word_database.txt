@@ -2,3 +2,13 @@ apple
 red
 blue
 Texas
+tiger
+ZEBRA
+HORSE
+SNAKE
+EAGLE
+OTTER
+PANDA
+LLAMA
+SHARK
+CAMEL
