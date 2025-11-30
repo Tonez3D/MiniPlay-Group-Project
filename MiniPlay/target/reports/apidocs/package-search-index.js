@@ -1,1 +1,0 @@
-packageSearchIndex = [{"l":"All Packages","u":"allpackages-index.html"},{"l":"com.mycompany.miniplay"},{"l":"MiniPlay.GUI"},{"l":"MiniPlay.Model"}];updateSearchResults();
