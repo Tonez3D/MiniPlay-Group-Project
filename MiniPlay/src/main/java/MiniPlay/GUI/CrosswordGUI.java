@@ -56,24 +56,13 @@ public class CrosswordGUI {
     public CrosswordGUI(GameManager manager) {
         this.manager = manager;
 
-        // Solution grid
-        solution = new char[][]{
-                {'#','D','A','R','T','H'},
-                {'#','I','D','A','H','O'},
-                {'#','V','O','W','E','D'},
-                {'T','I','N','E','S','#'},
-                {'A','N','I','S','E','#'},
-                {'N','E','S','T','S','#'}
-        };
-
-        // Black squares
-        isBlack = new boolean[][]{
-                {true,  false, false, false, false, false},
-                {true,  false, false, false, false, false},
-                {true,  false, false, false, false, false},
-                {false, false, false, false, false, true },
-                {false, false, false, false, false, true },
-                {false, false, false, false, false, true }
+        panel = new JPanel() {
+            @Override
+            protected void paintComponent(Graphics g) {
+                super.paintComponent(g);
+                g.setColor(UITheme.BACKGROUND);
+                g.fillRect(0, 0, getWidth(), getHeight());
+            }
         };
 
         cells = new JTextField[6][6];
