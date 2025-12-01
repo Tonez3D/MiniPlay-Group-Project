@@ -2,6 +2,7 @@ package MiniPlay.Model.WordSearch;
 
 import MiniPlay.Model.GridCell;
 import MiniPlay.GUI.WordSearchGUI;
+import MiniPlay.Utilities.Tools;
 
 import javax.swing.*;
 import java.awt.*;
@@ -25,6 +26,8 @@ public class WordSearchCell extends GridCell {
     @Override
     public void handleClick() {
 
+        Tools.playClip("MiniPlay/src/main/resources/Audio/mixkit-game-ball-tap-2073.wav");
+
         // Toggle selection
         selected = !selected;
         setBackground(selected ? Color.YELLOW : null);
@@ -36,6 +39,8 @@ public class WordSearchCell extends GridCell {
         String found = game.checkForCompletedWord();
 
         if (found != null) {
+            Tools.playClip("MiniPlay/src/main/resources/Audio/mixkit-casino-bling-achievement-2067.wav");
+
             // Word was found → refresh word list sidebar
             gui.updateWordList();
         }

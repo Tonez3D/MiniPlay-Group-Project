@@ -3,9 +3,13 @@ package MiniPlay.Model.TicTacToe;
 import MiniPlay.GUI.TicTacToeGUI;
 import MiniPlay.Model.GridCell;
 import MiniPlay.Model.GameManager;
+import MiniPlay.Utilities.Tools;
 
+import javax.sound.sampled.AudioSystem;
+import javax.sound.sampled.Clip;
 import javax.swing.*;
 import java.awt.*;
+import java.io.File;
 
 public class TicTacToeGridCell extends GridCell {
 
@@ -26,9 +30,6 @@ public class TicTacToeGridCell extends GridCell {
 
     @Override
     public void handleClick() {
-        if (game.isGameOver())
-            return;
-
         boolean moved = game.makeMove(row, col);
         if (!moved)
             return;
@@ -37,6 +38,7 @@ public class TicTacToeGridCell extends GridCell {
 
         // Check for end-of-game and handle popup / highlight
         if (game.isGameOver()) {
+            Tools.playClip("MiniPlay/src/main/resources/Audio/mixkit-casino-bling-achievement-2067.wav");
 
             if (game.getWinner() != ' ') {
                 int[][] winCells = game.getWinningCells();

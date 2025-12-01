@@ -5,6 +5,8 @@
 
 package MiniPlay.Model.TicTacToe;
 
+import MiniPlay.Utilities.Tools;
+
 public class TicTacToeGame {
 
     private char[][] board = new char[3][3];
@@ -33,9 +35,12 @@ public class TicTacToeGame {
     }
 
     public boolean makeMove(int r, int c) {
-        if (gameOver) return false;
-        if (board[r][c] != ' ') return false;
+        //if (gameOver) return false;
+        if (board[r][c] != ' ') {
+            return false;
+        }
 
+        Tools.playClip("MiniPlay/src/main/resources/Audio/mixkit-game-ball-tap-2073.wav");
         board[r][c] = currentPlayer;
 
         if (checkWin(currentPlayer)) {

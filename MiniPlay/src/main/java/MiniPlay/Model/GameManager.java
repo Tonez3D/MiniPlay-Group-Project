@@ -47,11 +47,10 @@ public class GameManager {
         wordSearchGUI = new WordSearchGUI(this);
 
         // Register screens with CardLayout
-        cardPanel.add(mainMenu.getPanel(),      MAIN_MENU);
-        cardPanel.add(ticTacToeGUI.getPanel(),  TICTACTOE);
-        cardPanel.add(crosswordGUI.getPanel(),  CROSSWORD);
+        cardPanel.add(mainMenu.getPanel(), MAIN_MENU);
+        cardPanel.add(ticTacToeGUI.getPanel(), TICTACTOE);
+        cardPanel.add(crosswordGUI.getPanel(), CROSSWORD);
         cardPanel.add(wordSearchGUI.getPanel(), WORDSEARCH);
-
 
         // Show main menu first
         showMainMenu();
@@ -59,7 +58,6 @@ public class GameManager {
         window.setLocationRelativeTo(null);
         window.setVisible(true);
     }
-
 
     public void showMainMenu() {
         cardLayout.show(cardPanel, MAIN_MENU);
@@ -76,5 +74,4 @@ public class GameManager {
     public void startWordSearch() {
         cardLayout.show(cardPanel, WORDSEARCH);
     }
-    
 }

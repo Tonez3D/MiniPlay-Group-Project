@@ -1,5 +1,7 @@
 package MiniPlay.Model.WordSearch;
 
+import MiniPlay.Utilities.Tools;
+
 import java.util.*;
 
 public class WordSearchGame {
@@ -10,10 +12,7 @@ public class WordSearchGame {
     private char[][] grid = new char[ROWS][COLS];
 
     // 10 animal-themed words, all 4+ letters
-    private List<String> words = List.of(
-            "TIGER", "ZEBRA", "HORSE", "SNAKE", "EAGLE",
-            "OTTER", "PANDA", "LLAMA", "SHARK", "CAMEL"
-    );
+    private List<String> words = Tools.getWords(10);
 
     // Track found words
     private Set<String> foundWords = new HashSet<>();
@@ -24,7 +23,8 @@ public class WordSearchGame {
     private Random rand = new Random();
 
     public WordSearchGame() {
-
+        //List<String> t = Tools.getWords(2);
+        //System.out.println(t);
         // Initialize grid with blanks
         for (int r = 0; r < ROWS; r++)
             for (int c = 0; c < COLS; c++)
@@ -49,7 +49,6 @@ public class WordSearchGame {
     public Set<String> getFoundWords() {
         return foundWords;
     }
-
 
     public void toggleSelect(int r, int c) {
         for (int i = 0; i < selectedCells.size(); i++) {
