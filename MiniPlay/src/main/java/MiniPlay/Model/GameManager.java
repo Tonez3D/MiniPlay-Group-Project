@@ -31,7 +31,7 @@ public class GameManager {
 
     public GameManager() {
 
-        // ----- Window -----
+        // Window
         window = new JFrame("MiniPlay");
         window.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         window.setSize(new Dimension(1200, 900));
@@ -40,14 +40,14 @@ public class GameManager {
         cardPanel  = new JPanel(cardLayout);
         window.setContentPane(cardPanel);
 
-        // ----- Create screens -----
+        // Create screens
         mainMenu      = new MainMenu(this);
         ticTacToeGUI  = new TicTacToeGUI(this);
         crosswordGUI  = new CrosswordGUI(this);
         wordSearchGUI = new WordSearchGUI(this);
         colorFillGUI  = new ColorFillGUI(this);  // just a demo screen
 
-        // ----- Register screens with CardLayout -----
+        // Register screens with CardLayout
         cardPanel.add(mainMenu.getPanel(),      MAIN_MENU);
         cardPanel.add(ticTacToeGUI.getPanel(),  TICTACTOE);
         cardPanel.add(crosswordGUI.getPanel(),  CROSSWORD);
@@ -81,5 +81,6 @@ public class GameManager {
     public void startColorFill() {
         cardLayout.show(cardPanel, COLORFILL);
     }
+
     
 }

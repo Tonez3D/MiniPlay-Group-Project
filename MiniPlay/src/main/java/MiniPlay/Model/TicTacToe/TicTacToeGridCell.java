@@ -33,8 +33,11 @@ public class TicTacToeGridCell extends GridCell {
         if (!moved)
             return;
 
-        // If game ended after this move, handle winner/draw
+        render();
+
+        // Check for end-of-game and handle popup / highlight
         if (game.isGameOver()) {
+
             if (game.getWinner() != ' ') {
                 int[][] winCells = game.getWinningCells();
                 gui.animateWin(winCells);
@@ -55,19 +58,24 @@ public class TicTacToeGridCell extends GridCell {
                 game.reset();
                 gui.refreshBoard();
             } else {
+                game.reset();
+                gui.refreshBoard();
                 manager.showMainMenu();
             }
         }
-
-        render();
     }
 
     @Override
     public void render() {
         this.removeAll();
-        JLabel label = new JLabel(String.valueOf(game.getCell(row, col)), SwingConstants.CENTER);
+
+        JLabel label = new JLabel(
+                String.valueOf(game.getCell(row, col)),
+                SwingConstants.CENTER
+        );
         label.setFont(new Font("Arial", Font.BOLD, 26));
         this.add(label);
+
         this.revalidate();
         this.repaint();
     }
