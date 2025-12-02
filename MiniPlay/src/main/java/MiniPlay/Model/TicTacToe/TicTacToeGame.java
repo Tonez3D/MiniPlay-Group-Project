@@ -40,7 +40,7 @@ public class TicTacToeGame {
             return false;
         }
 
-        Tools.playClip("MiniPlay/src/main/resources/Audio/mixkit-game-ball-tap-2073.wav");
+        Tools.playClip("/Audio/mixkit-game-ball-tap-2073.wav");
         board[r][c] = currentPlayer;
 
         if (checkWin(currentPlayer)) {
