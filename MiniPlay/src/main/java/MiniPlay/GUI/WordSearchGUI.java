@@ -1,8 +1,3 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
-
 package MiniPlay.GUI;
 
 import MiniPlay.Model.GameManager;
@@ -32,28 +27,24 @@ public class WordSearchGUI {
 
         panel.setLayout(new BorderLayout());
 
-        // Title
         JLabel title = new JLabel("Word Search", SwingConstants.CENTER);
         title.setFont(new Font("Serif", Font.BOLD, 28));
         title.setForeground(UITheme.ACCENT_DARK);
         panel.add(title, BorderLayout.NORTH);
 
-        // Create game logic
         game = new WordSearchGame();
 
-        // Sidebar for word list
+        // Sidebar to list words
         wordPanel = new JPanel();
         wordPanel.setBackground(UITheme.PANEL);
         wordPanel.setLayout(new BoxLayout(wordPanel, BoxLayout.Y_AXIS));
-        updateWordList();  // draw initial list
-
+        updateWordList();
         panel.add(wordPanel, BorderLayout.WEST);
 
-        // Pass BOTH the game AND this GUI into each cell
+        // Grid: pass BOTH game + GUI to cells
         Grid grid = new Grid(10, 10, WordSearchCell.class, new Object[]{ game, this });
         panel.add(grid, BorderLayout.CENTER);
 
-        // Back button
         JButton back = UIStyled.backButton("Back to Main Menu", manager);
         panel.add(back, BorderLayout.SOUTH);
     }
@@ -62,6 +53,9 @@ public class WordSearchGUI {
         return panel;
     }
 
+    // -------------------------------
+    // Refresh the sidebar word list
+    // -------------------------------
     public void updateWordList() {
         wordPanel.removeAll();
 
@@ -70,7 +64,6 @@ public class WordSearchGUI {
             JLabel lbl;
 
             if (game.isWordFound(w)) {
-                // Strike-through the found word
                 lbl = new JLabel("<html><strike>" + w + "</strike></html>");
             } else {
                 lbl = new JLabel(w);
@@ -78,7 +71,6 @@ public class WordSearchGUI {
 
             lbl.setFont(new Font("Serif", Font.PLAIN, 18));
             lbl.setForeground(UITheme.ACCENT_DARK);
-            lbl.setBorder(BorderFactory.createEmptyBorder(5, 10, 5, 10));
 
             wordPanel.add(lbl);
         }

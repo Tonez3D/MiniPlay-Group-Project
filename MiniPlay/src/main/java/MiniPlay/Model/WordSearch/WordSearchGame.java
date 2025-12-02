@@ -1,7 +1,5 @@
 package MiniPlay.Model.WordSearch;
 
-import MiniPlay.Utilities.Tools;
-
 import java.util.*;
 
 public class WordSearchGame {
@@ -12,7 +10,10 @@ public class WordSearchGame {
     private char[][] grid = new char[ROWS][COLS];
 
     // 10 animal-themed words, all 4+ letters
-    private List<String> words = Tools.getWords(10);
+    private List<String> words = List.of(
+            "TIGER", "ZEBRA", "HORSE", "SNAKE", "EAGLE",
+            "OTTER", "PANDA", "LLAMA", "SHARK", "CAMEL"
+    );
 
     // Track found words
     private Set<String> foundWords = new HashSet<>();
@@ -23,9 +24,8 @@ public class WordSearchGame {
     private Random rand = new Random();
 
     public WordSearchGame() {
-        //List<String> t = Tools.getWords(2);
-        //System.out.println(t);
-        // Initialize grid with blanks
+
+        // Initialize empty grid
         for (int r = 0; r < ROWS; r++)
             for (int c = 0; c < COLS; c++)
                 grid[r][c] = ' ';
@@ -50,18 +50,27 @@ public class WordSearchGame {
         return foundWords;
     }
 
+
+    // -----------------------
+    // SELECT / UNSELECT CELL
+    // -----------------------
     public void toggleSelect(int r, int c) {
+
         for (int i = 0; i < selectedCells.size(); i++) {
             int[] cell = selectedCells.get(i);
+
+            // If already selected → remove it
             if (cell[0] == r && cell[1] == c) {
                 selectedCells.remove(i);
                 return;
             }
         }
+
+        // Otherwise, add it
         selectedCells.add(new int[]{r, c});
     }
 
-    // Called after every click to see if the user formed a word
+    // Check if selected letters form a word
     public String checkForCompletedWord() {
         if (selectedCells.isEmpty())
             return null;
@@ -79,12 +88,14 @@ public class WordSearchGame {
                 return w;
             }
         }
+
         return null;
     }
 
-    public void clearSelected() {
-        selectedCells.clear();
-    }
+
+    // -----------------------
+    // WORD PLACEMENT LOGIC
+    // -----------------------
 
     private void placeAllWords() {
         for (String w : words)
@@ -98,15 +109,16 @@ public class WordSearchGame {
         while (!placed && attempts < 400) {
             attempts++;
 
-            int direction = rand.nextInt(2);  // 0 = horizontal, 1 = vertical
+            int direction = rand.nextInt(2); // 0 = horizontal, 1 = vertical
             int row = rand.nextInt(ROWS);
             int col = rand.nextInt(COLS);
 
             if (direction == 0) { // HORIZONTAL
                 if (col + word.length() <= COLS) {
 
-                    // Prevent stacking directly above or below
+                    // Avoid stacking vertically around the word
                     boolean blocked = false;
+
                     if (row > 0) {
                         for (int i = 0; i < word.length(); i++)
                             if (grid[row - 1][col + i] != ' ')
@@ -161,6 +173,10 @@ public class WordSearchGame {
         return true;
     }
 
+
+    // -----------------------
+    // FILL EMPTY CELLS
+    // -----------------------
     private void fillRandomLetters() {
         for (int r = 0; r < ROWS; r++)
             for (int c = 0; c < COLS; c++)
