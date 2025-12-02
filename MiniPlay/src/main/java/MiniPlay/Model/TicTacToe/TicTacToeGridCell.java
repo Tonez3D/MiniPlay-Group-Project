@@ -3,9 +3,13 @@ package MiniPlay.Model.TicTacToe;
 import MiniPlay.GUI.TicTacToeGUI;
 import MiniPlay.Model.GridCell;
 import MiniPlay.Model.GameManager;
+import MiniPlay.Utilities.Tools;
 
+import javax.sound.sampled.AudioSystem;
+import javax.sound.sampled.Clip;
 import javax.swing.*;
 import java.awt.*;
+import java.io.File;
 
 public class TicTacToeGridCell extends GridCell {
 
@@ -26,15 +30,16 @@ public class TicTacToeGridCell extends GridCell {
 
     @Override
     public void handleClick() {
-        if (game.isGameOver())
-            return;
-
         boolean moved = game.makeMove(row, col);
         if (!moved)
             return;
 
-        // If game ended after this move, handle winner/draw
+        render();
+
+        // Check for end-of-game and handle popup / highlight
         if (game.isGameOver()) {
+            Tools.playClip("MiniPlay/src/main/resources/Audio/mixkit-casino-bling-achievement-2067.wav");
+
             if (game.getWinner() != ' ') {
                 int[][] winCells = game.getWinningCells();
                 gui.animateWin(winCells);
@@ -55,19 +60,24 @@ public class TicTacToeGridCell extends GridCell {
                 game.reset();
                 gui.refreshBoard();
             } else {
+                game.reset();
+                gui.refreshBoard();
                 manager.showMainMenu();
             }
         }
-
-        render();
     }
 
     @Override
     public void render() {
         this.removeAll();
-        JLabel label = new JLabel(String.valueOf(game.getCell(row, col)), SwingConstants.CENTER);
+
+        JLabel label = new JLabel(
+                String.valueOf(game.getCell(row, col)),
+                SwingConstants.CENTER
+        );
         label.setFont(new Font("Arial", Font.BOLD, 26));
         this.add(label);
+
         this.revalidate();
         this.repaint();
     }
